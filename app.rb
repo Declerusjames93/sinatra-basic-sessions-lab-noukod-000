@@ -12,4 +12,9 @@ class App < Sinatra::Base
 #   session["name"] = "Victoria"
 #   @session = session
 # end
+post '/checkout' do
+    session[:item] = params[:item]
+    @session = session
+    "#{@session[:item]}"
+  end
 end
